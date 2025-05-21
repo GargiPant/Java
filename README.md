@@ -234,13 +234,9 @@ The `Demo` class is the main public class that extends the JavaFX `Application` 
 * Requirement 8: Purchase add-ons after booking seats.
 * Requirement 9: Generate invoice after the purchasing process.
 
-# ✈️ Airline Reservation System
 
-A comprehensive **Airline Reservation System** built using Java, JavaFX, and multithreading. It features custom exception handling, synchronized seat booking, and a responsive GUI for travelers and managers.
 
----
-
-## ✅ Exception Handling
+##  Exception Handling
 
 - A custom checked exception `AllSeatsBooked` is defined and thrown when all seats on an airplane are booked.
 - This exception is caught immediately where it's thrown.
@@ -249,7 +245,7 @@ A comprehensive **Airline Reservation System** built using Java, JavaFX, and mul
 
 ---
 
-## 🔄 Multithreading
+## Multithreading
 
 - Each traveler initiating a booking spawns a new `Request` object (implements `Runnable`).
 - This object starts a new thread to execute the `Seat.book()` method.
@@ -259,14 +255,14 @@ A comprehensive **Airline Reservation System** built using Java, JavaFX, and mul
 
 ---
 
-## 🧩 Generic Features
+##  Generic Features
 
 - A generic class `Stack<T>` is implemented to handle different data types like `Integer`, `String`, `Airplane`, etc.
 - Used to store departed flights and derive statistics from them.
 
 ---
 
-## 🎨 JavaFX GUI Components
+##  JavaFX GUI Components
 
 - **Application**: Manages the GUI thread.
 - **Stage & Scene**: Containers for the user interface.
@@ -281,7 +277,7 @@ A comprehensive **Airline Reservation System** built using Java, JavaFX, and mul
 
 ---
 
-## ⚙️ JavaFX Functional Elements
+##  JavaFX Functional Elements
 
 ### Layout & Alignment
 - `Pos`, `HPos`, `VPos`: Used for node alignment inside layout panes.
@@ -299,7 +295,7 @@ A comprehensive **Airline Reservation System** built using Java, JavaFX, and mul
 
 ---
 
-## 🔗 Property Binding and Observables
+##  Property Binding and Observables
 
 - `BooleanProperty`, `DoubleProperty`, `IntegerProperty`: Observable wrappers with binding support.
 - `ChangeListener`: Responds to changes in observable properties.
