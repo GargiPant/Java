@@ -233,3 +233,89 @@ The `Demo` class is the main public class that extends the JavaFX `Application` 
 * Requirement 7: Book Tickets.
 * Requirement 8: Purchase add-ons after booking seats.
 * Requirement 9: Generate invoice after the purchasing process.
+
+# ✈️ Airline Reservation System
+
+A comprehensive **Airline Reservation System** built using Java, JavaFX, and multithreading. It features custom exception handling, synchronized seat booking, and a responsive GUI for travelers and managers.
+
+---
+
+## ✅ Exception Handling
+
+- A custom checked exception `AllSeatsBooked` is defined and thrown when all seats on an airplane are booked.
+- This exception is caught immediately where it's thrown.
+- Upon catching the exception, the GUI label is updated with:  
+  **“All Seats have been booked.”**
+
+---
+
+## 🔄 Multithreading
+
+- Each traveler initiating a booking spawns a new `Request` object (implements `Runnable`).
+- This object starts a new thread to execute the `Seat.book()` method.
+- The `book()` method is synchronized, allowing only one thread to access and book a seat.
+- The first thread sets the seat as booked, adds the cost to the traveler’s total, updates the invoice, and increases all remaining unbooked seat prices by 10%.
+- Threads accessing a seat after it has been booked will fail, preserving booking integrity.
+
+---
+
+## 🧩 Generic Features
+
+- A generic class `Stack<T>` is implemented to handle different data types like `Integer`, `String`, `Airplane`, etc.
+- Used to store departed flights and derive statistics from them.
+
+---
+
+## 🎨 JavaFX GUI Components
+
+- **Application**: Manages the GUI thread.
+- **Stage & Scene**: Containers for the user interface.
+- **AnchorPane & GridPane**: Layouts used to organize UI components.
+- **UI Controls**:
+  - `Label`, `Button`, `TextField`, `PasswordField`, `ListView`, `ToggleButton`, `CheckBox`
+  - `ToggleButton`: Represents seats in the airplane.
+  - `TextField`: Accepts user input for search and operations.
+  - `PasswordField`: Used for secure manager login.
+  - `ListView`: Displays available airplanes and other lists.
+  - `CheckBox`: Enables addon selection for flights.
+
+---
+
+## ⚙️ JavaFX Functional Elements
+
+### Layout & Alignment
+- `Pos`, `HPos`, `VPos`: Used for node alignment inside layout panes.
+
+### Event Handling
+- `EventHandler<ActionEvent>`: Manages user interactions like button clicks.
+
+### Collections
+- `ObservableList<T>`: Represents dynamic lists that update UI components.
+- `FXCollections`: Converts arrays or lists into `ObservableList`.
+- `FilteredList<T>`: Enables search/filter functionality on flight lists.
+
+### Styling
+- `Font`: Customizes the appearance (size, weight) of UI text elements.
+
+---
+
+## 🔗 Property Binding and Observables
+
+- `BooleanProperty`, `DoubleProperty`, `IntegerProperty`: Observable wrappers with binding support.
+- `ChangeListener`: Responds to changes in observable properties.
+- `BooleanBinding`: Binds to all seat `booked` properties.
+  - Returns `true` automatically when all seats are booked.
+  - Used to detect when the airplane is fully booked.
+
+---
+
+This system demonstrates robust use of:
+- **Object-Oriented Programming**
+- **JavaFX UI design**
+- **Thread Safety with Synchronization**
+- **Custom Exception Handling**
+- **Generic Classes**
+- **Dynamic and Reactive GUI Components**
+
+It is ideal for students, developers, and anyone learning advanced Java development with GUI and concurrency.
+
